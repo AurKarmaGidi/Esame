@@ -1,0 +1,365 @@
+ /* Reset CSS */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #2c3e50, rgb(8, 8, 37));
+    color: white;
+    padding: 1rem;
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px 15%;
+    border-bottom: 1px solid transparent;
+}
+
+nav.hamburger-menu {
+    position: fixed;
+    background-color: rgb(3, 3, 31);
+    color: white;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+nav.hamburger-menu .logo {
+    margin: 0 70px 0 40px;
+}
+
+nav.hamburger-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav.hamburger-menu li {
+    list-style: none;
+    display: inline;
+    margin: 0 40px 0 0;
+}
+
+nav.hamburger-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+nav.hamburger-menu a:hover {
+    color: rgb(170, 170, 230);
+    text-decoration: none;
+}
+
+@media all and (max-width:768px) {
+
+    /* label input disegna 3 linee*/
+    nav.hamburger-menu .label-controllo {
+        position: fixed;
+        top: 18px;
+        left: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+     /* label input disegna 3 linee*/
+     nav.hamburger-menu .label-controlloChiuso {
+        display: none;
+        position: fixed;
+        top: 18px;
+        left: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    nav.hamburger-menu .label-controllo>span,
+    nav.hamburger-menu .label-controllo>span::before,
+    nav.hamburger-menu .label-controllo>span::after {
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: white;
+    }
+
+    nav.hamburger-menu .label-controllo>span::before {
+        content: '';
+        top: -8px;
+    }
+
+    nav.hamburger-menu .label-controllo>span::after {
+        content: '';
+        top: 8px;
+    }
+
+    nav.hamburger-menu .label-controlloChiuso>span,
+    nav.hamburger-menu .label-controlloChiuso>span::before,
+    nav.hamburger-menu .label-controlloChiuso>span::after {
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: white;
+    }
+
+    nav.hamburger-menu .label-controlloChiuso>span::before {
+        content: '';
+        top: -8px;
+    }
+
+    nav.hamburger-menu .label-controlloChiuso>span::after {
+        content: '';
+        top: 8px;
+    }
+
+
+    /* ul del menu */
+    nav.hamburger-menu #menu {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        padding: 80px 0;
+        background-color: rgb(3, 3, 31);
+        box-shadow: 2px 2px 6px black;
+        transition-duration: .25s;
+    }
+
+    /*voci del menu*/
+    nav.hamburger-menu .vociMenu {
+        display: block;
+        padding: 12px 24px;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 600;
+        transition-duration: .25s;
+    }
+
+    /*voci del menu hover*/
+    nav.hamburger-menu .vociMenu:hover {
+        background-color: rgb(170, 170, 230);
+        color: black;
+    }
+
+    nav.hamburger-menu:target .label-controllo {
+        display: none;
+    }
+
+    nav.hamburger-menu:target .label-controlloChiuso {
+        display: block;
+    }
+    
+    nav.hamburger-menu:target .label-controlloChiuso>span {
+        transform: rotate(45deg);
+    }
+
+    nav.hamburger-menu:target .label-controlloChiuso>span::before {
+        top: 0;
+        transform: rotate(0deg);
+    }
+
+    nav.hamburger-menu:target .label-controlloChiuso>span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+   nav.hamburger-menu:target #menu {
+        left: 0 !important;
+    }
+
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('../img/background.jpg') center/cover;
+    color: rgb(255, 255, 255);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+}
+
+.hero-content {
+    position: static;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 7rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-weight: 800;
+    font-size: 2rem
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #c22e2e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: rgb(36, 36, 51);
+}
+
+/* Portfolio Section */
+.portfolio {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+}
+
+.portfolio h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.portfolio a {
+    text-decoration: none;
+    color: darkblue;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.portfolio-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgb(8, 8, 37);
+    transition: transform 0.3s;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.portfolio-item-content {
+    padding: 1rem;
+}
+
+/* Contact Form */
+.contact {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    height: 150px;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
